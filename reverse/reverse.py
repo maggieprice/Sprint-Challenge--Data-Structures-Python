@@ -47,5 +47,3 @@ class LinkedList:
             prev = node
             node = new_next
             self.head = prev
-# Find the head
-# 

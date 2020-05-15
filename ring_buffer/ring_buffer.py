@@ -2,18 +2,19 @@ class RingBuffer:
     def __init__(self, capacity):
         self.capacity= capacity
         self.data = []
-        current = self.head
-
+        
 
     def append(self, item):
-        while current:
-        if len(self.data) == self.data:
-            self.data.pop(current)
-            self.data.insert(current, item)
-        
+        if len(self.data) < self.capacity:
+            self.data.append(item)
+            return self.data
+        else: 
+            if len(self.data) == self.capacity:
+                self.data.pop(0)
+                self.append(item)
+            
             # remove head
             # insert new item into head
 
     def get(self):
         return self.data
-
